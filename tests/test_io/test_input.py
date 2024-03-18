@@ -32,8 +32,6 @@ class TestReadFromFileUsingPandas:
         filepath = 'tests/test_data/test.csv'
         read_df = i.read_dataframe_from_file(filepath)
 
-        print(read_df)
-
         assert read_df.equals(df)
 
     def test_invalid_filepath(self):
