@@ -1,3 +1,6 @@
+import pandas as pd
+
+
 def write_to_console(text):
     """
     Writes to console a given text using standard function.
@@ -26,7 +29,7 @@ def write_to_file(contents, filepath):
         file.write(contents)
 
 
-def write_to_file_using_pandas(df, filepath):
+def write_dataframe_to_file(df, filepath):
     """
     Writes pandas.DataFrame to a .csv file by its path.
 
@@ -34,4 +37,8 @@ def write_to_file_using_pandas(df, filepath):
         df (DataFrame): DataFrame to be writen to a file.
         filepath (str): A path to a .csv file
     """
+    if not isinstance(df, pd.DataFrame):
+        print(f'Failed to write, because value of df argument is not pandas.DataFrame!')
+        return
+
     df.to_csv(filepath)

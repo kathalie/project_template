@@ -13,9 +13,8 @@ def main():
     o.write_to_file(file_content, output_text_file_name)
 
     csv_filepath = i.read_from_console('Enter a .csv file path to read from: ')
-    df = i.read_from_file_using_pandas(csv_filepath)
-    print(df)
-    o.write_to_file_using_pandas(df, output_csv_file_name)
+    df = i.read_dataframe_from_file(csv_filepath)
+    o.write_dataframe_to_file(df, output_csv_file_name)
 
 
 if __name__ == '__main__':

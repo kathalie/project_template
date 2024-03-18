@@ -26,16 +26,16 @@ def read_from_file(filepath):
         None. If there is no such file or directory.
     """
     if not os.path.isfile(filepath):
-        print(f'Not found: {filepath}')
+        print(f'No such file or directory: {filepath}')
         return None
 
     with open(filepath) as file:
         return file.read()
 
 
-def read_from_file_using_pandas(filepath):
+def read_dataframe_from_file(filepath):
     """
-    Reads comma-separated values from a .csv file using pandas.
+    Retrieves a DataFrame from a .csv file using pandas.
 
     Args:
         filepath (str): A path to a .csv file to read from.
@@ -44,7 +44,7 @@ def read_from_file_using_pandas(filepath):
     pandas.DataFrame.
     """
     if not os.path.isfile(filepath):
-        print(f'Not found: {filepath}')
+        print(f'No such file or directory: {filepath}')
         return None
 
     return pd.read_csv(filepath)
