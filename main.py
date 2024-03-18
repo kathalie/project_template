@@ -1,7 +1,21 @@
+import app.io.input as i
+import app.io.output as o
 
 
 def main():
-    pass
+    output_text_file_name = './data/output.txt'
+    output_csv_file_name = './data/output.csv'
+
+    filepath = i.read_from_console('Enter a file path to read from: ')
+    o.write_to_console(filepath)
+
+    file_content = i.read_from_file(filepath)
+    o.write_to_file(file_content, output_text_file_name)
+
+    csv_filepath = i.read_from_console('Enter a .csv file path to read from: ')
+    df = i.read_from_file_using_pandas(csv_filepath)
+    print(df)
+    o.write_to_file_using_pandas(df, output_csv_file_name)
 
 
 if __name__ == '__main__':
